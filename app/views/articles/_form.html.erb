@@ -1,0 +1,45 @@
+<%= form_for(@article, html: {multipart: true}) do |f| %>   # html: {multipart: true} is needed to attach files
+
+  <ul>
+  <% @article.errors.full_messages.each do |error| %>
+    <li><%= error %></li>
+  <% end %>
+  </ul>
+
+  <p>
+    <%= f.label :title %><br />
+    <%= f.text_field :title %>
+  </p>
+
+  <p>
+    <%= f.label :body %><br />
+    <%= f.text_area :body %>
+  </p>
+  
+  <p>
+    <%= f.label :tag_list %><br />
+    <%= f.text_field :tag_list %>
+  </p>
+
+  <p>
+    <% if @article.image.exists? %>
+        <%= image_tag @article.image.url %><br/>
+    <% end %>
+    <%= f.label :image, "Attach a New Image" %><br />
+    <%= f.file_field :image %>
+  </p>
+
+  <p>
+    <%= f.submit %>
+  </p>
+
+<% end %>
+
+<!-- 
+form_for is a Rails helper method which takes one parameter, in this case @article and a block with the form fields. 
+The first line basically says "Create a form for the object named @article, refer to the form by the name "f" and add the following elements to the form…"
+  The f.label helper creates an HTML label for a field. This is good usability practice and will have some other benefits for us later
+  The f.text_field helper creates a single-line text box named title
+  The f.text_area helper creates a multi-line text box named body
+  The f.submit helper creates a button labeled "Create" 
+-->

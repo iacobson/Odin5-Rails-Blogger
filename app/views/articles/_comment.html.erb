@@ -1,0 +1,7 @@
+<div>
+  <h5>Comment by <%= comment.author_name %></h5>
+  <p class="comment"><%= comment.body %></p>
+  <p>Posted <%= distance_of_time_in_words(comment.article.created_at, comment.created_at) %> later</p>
+  <!-- Rails has a really neat helper named distance_of_time_in_words which takes two dates and creates a text description of their difference like "32 minutes later", "3 months later", and so on. -->
+  <br>
+</div>

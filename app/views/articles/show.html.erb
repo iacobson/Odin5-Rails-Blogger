@@ -1,0 +1,47 @@
+<h1><%= @article.title %></h1>
+<br>
+<br>
+<p>
+  Tags:
+  <% @article.tags.each do |tag| %>
+    <%= link_to tag.name, tag_path(tag), id: "article_tags" %>
+  <% end %>
+</p>
+
+<br>
+
+<% if @article.image.exists? %>
+    <%= image_tag @article.image.url %><br/>	<!-- Displays image only if exists (attached) -->
+<% end %>
+
+<br>
+
+<p><%= @article.body %></p>
+<p id="article_created_at">created at <%= @article.created_at %></p>
+
+<br>
+<h3>Comments ( <%= @article.comments.size %> )</h3> 	<!-- the () are used just for display . eg: (5) -->
+
+<%= render partial: 'articles/comment', collection: @article.comments %>
+<!-- This renders a partial named "comment" and that we want to do it once for each element in the collection @article.comments. We saw in the console that when we call the .comments method on an article we’ll get back an array of its associated comment objects. This render line will pass each element of that array one at a time into the partial named "comment".  "collection" works somehow like 'comments.each' for the partial -->
+
+<br>
+
+<%= render partial: 'comments/form' %>
+
+<br>
+<%= link_to "<< Back to Articles List", articles_path %>
+<br>
+<br>
+<%= link_to "Delete Article", article_path(@article), method: :delete, 
+	data: {confirm: "Really delete the article?" } %>
+
+<!-- The server is seeing a GET request, but the route needs a DELETE verb. How do we make our link trigger a DELETE?
+
+You can’t, exactly. While most browsers support all four verbs, GET, PUT, POST, and DELETE, HTML links are always GET, and HTML forms only support GET and POST. So what are we to do?
+
+Rails’ solution to this problem is to fake a DELETE verb. In your view template, you can add another attribute to the link like this: "method: :delete" -->
+
+<br>
+<br>
+<%= link_to "Edit Article", edit_article_path(@article) %>

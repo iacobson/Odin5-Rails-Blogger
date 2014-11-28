@@ -1,4 +1,6 @@
-Odin5_Rails_Blogger
-===================
+Blogger
+========
+Odin Rails project - http://www.theodinproject.com/web-development-101/ruby-on-rails
 
-Odin Project assignment: a simple blog in rails
+Making a blog, following steps on:
+http://tutorials.jumpstartlab.com/projects/blogger.html
