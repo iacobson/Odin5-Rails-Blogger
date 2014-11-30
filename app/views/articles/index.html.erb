@@ -11,6 +11,8 @@
   <% end %>
 </ul>
 
+<% if logged_in? %>
 <%= link_to "Create a New Article", new_article_path, class: "new_article" %>
+<% end %>
 <br>
 <%= link_to "Show all Tags", tags_path, id: "show_all_tags" %>

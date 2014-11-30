@@ -2,6 +2,8 @@ class ArticlesController < ApplicationController
 	include ArticlesHelper	
 		# params.require(:article).permit(:title, :body) is defined in app/helpers/articles_helper.rb
 
+	before_filter :require_login, except: [:index, :show]
+
 	def index
 	  @articles = Article.all
 	end

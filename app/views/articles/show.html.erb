@@ -8,6 +8,12 @@
   <% end %>
 </p>
 
+<p>
+
+
+
+</p>
+
 <br>
 
 <% if @article.image.exists? %>
@@ -33,8 +39,10 @@
 <%= link_to "<< Back to Articles List", articles_path %>
 <br>
 <br>
-<%= link_to "Delete Article", article_path(@article), method: :delete, 
-	data: {confirm: "Really delete the article?" } %>
+<% if logged_in? %>
+	<%= link_to "Delete Article", article_path(@article), method: :delete, 
+		data: {confirm: "Really delete the article?" } %>
+
 
 <!-- The server is seeing a GET request, but the route needs a DELETE verb. How do we make our link trigger a DELETE?
 
@@ -45,3 +53,5 @@ Rails’ solution to this problem is to fake a DELETE verb. In your view templat
 <br>
 <br>
 <%= link_to "Edit Article", edit_article_path(@article) %>
+
+<% end %>

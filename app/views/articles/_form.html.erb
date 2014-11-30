@@ -1,4 +1,5 @@
-<%= form_for(@article, html: {multipart: true}) do |f| %>   # html: {multipart: true} is needed to attach files
+<%= form_for(@article, html: {multipart: true}) do |f| %>    
+<!-- html: {multipart: true} is needed to attach files -->
 
   <ul>
   <% @article.errors.full_messages.each do |error| %>

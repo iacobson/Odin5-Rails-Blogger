@@ -14,5 +14,10 @@
 <br>
 <%= link_to "<< Back to Tags List", tags_path %>
 <br>
+
+<% if logged_in? %>
+
 <%= link_to "Delete Tag", tag_path(@tag), method: :delete, 
 	data: {confirm: "Really delete the tag?" } %>
+
+<% end %>
