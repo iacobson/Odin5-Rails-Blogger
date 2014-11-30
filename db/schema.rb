@@ -16,6 +16,7 @@ ActiveRecord::Schema.define(version: 20141129145411) do
   create_table "articles", force: true do |t|
     t.string   "title"
     t.text     "body"
+    t.integer  "view_count"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "image_file_name"

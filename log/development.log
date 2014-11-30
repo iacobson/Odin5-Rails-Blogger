@@ -13755,3 +13755,9 @@ Started GET "/assets/tags.js?body=1" for 127.0.0.1 at 2014-11-30 22:11:07 +0200
 
 
 Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-30 22:11:07 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to ViewCount (20141130212043)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "articles" ADD "view_count" integer[0m
+SQLite3::SQLException: duplicate column name: view_count: ALTER TABLE "articles" ADD "view_count" integer
+  [1m[35m (0.1ms)[0m  rollback transaction
