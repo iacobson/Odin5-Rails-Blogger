@@ -12593,3 +12593,56 @@ Processing by ArticlesController#show as HTML
   [1m[35mAuthor Load (0.2ms)[0m  SELECT  "authors".* FROM "authors"  WHERE "authors"."id" = 1 LIMIT 1
   Rendered articles/show.html.erb within layouts/application (16.7ms)
 Completed 200 OK in 255ms (Views: 98.8ms | ActiveRecord: 148.8ms)
+
+
+Started GET "/authors" for 127.0.0.1 at 2014-11-30 20:59:12 +0200
+Processing by AuthorsController#index as HTML
+  [1m[36mAuthor Load (0.2ms)[0m  [1mSELECT  "authors".* FROM "authors"  WHERE "authors"."id" = 1 LIMIT 1[0m
+  [1m[35mAuthor Load (0.1ms)[0m  SELECT "authors".* FROM "authors"
+  Rendered authors/index.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 95ms (Views: 93.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/screen.css?body=1" for 127.0.0.1 at 2014-11-30 20:59:13 +0200
+
+
+Started GET "/assets/articles.css?body=1" for 127.0.0.1 at 2014-11-30 20:59:13 +0200
+
+
+Started GET "/assets/author_sessions.css?body=1" for 127.0.0.1 at 2014-11-30 20:59:13 +0200
+
+
+Started GET "/assets/tags.css?body=1" for 127.0.0.1 at 2014-11-30 20:59:13 +0200
+
+
+Started GET "/assets/comments.css?body=1" for 127.0.0.1 at 2014-11-30 20:59:13 +0200
+
+
+Started GET "/assets/styles.css?body=1" for 127.0.0.1 at 2014-11-30 20:59:13 +0200
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-30 20:59:13 +0200
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-30 20:59:13 +0200
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-30 20:59:13 +0200
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-11-30 20:59:13 +0200
+
+
+Started GET "/assets/articles.js?body=1" for 127.0.0.1 at 2014-11-30 20:59:13 +0200
+
+
+Started GET "/assets/author_sessions.js?body=1" for 127.0.0.1 at 2014-11-30 20:59:13 +0200
+
+
+Started GET "/assets/comments.js?body=1" for 127.0.0.1 at 2014-11-30 20:59:13 +0200
+
+
+Started GET "/assets/tags.js?body=1" for 127.0.0.1 at 2014-11-30 20:59:13 +0200
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-30 20:59:13 +0200
