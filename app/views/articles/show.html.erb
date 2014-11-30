@@ -1,5 +1,6 @@
 <h1><%= @article.title %></h1>
 <br>
+<h3>Article viewed <%= @view_count %> times </h3>
 <br>
 <p>
   Tags:
@@ -8,11 +9,7 @@
   <% end %>
 </p>
 
-<p>
 
-
-
-</p>
 
 <br>
 
@@ -24,6 +21,21 @@
 
 <p><%= @article.body %></p>
 <p id="article_created_at">created at <%= @article.created_at %></p>
+
+<br>
+
+<p>
+
+	<h2> Top articles on blog </h2>
+	<ol>
+		<% @top_views.each do |article| %>
+			<li> 
+				<%= link_to article.title + " with " + article.view_count.to_s + " views", article_path(article) %> 
+			</li>
+		<% end %>
+	</ol>
+
+</p>
 
 <br>
 <h3>Comments ( <%= @article.comments.size %> )</h3> 	<!-- the () are used just for display . eg: (5) -->

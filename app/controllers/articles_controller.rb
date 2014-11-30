@@ -13,9 +13,18 @@ class ArticlesController < ApplicationController
 
 		@comment = Comment.new	#adding new comment in show Article (different than Rails officila tutorial)
 		@comment.article_id = @article.id
+
 		#why we aren’t using @article.comments.new?
 		#if we do so, there is an extra empty comment at the end of the list of comments. 
 		#That is due to the fact that @article.comments.new has added the new Comment to the in-memory collection for the Article
+	
+	@article.view_count = @article.view_count.to_i + 1
+	@article.save
+
+	@view_count = @article.view_count
+
+	@top_views = Article.order(view_count: :desc).take(3)		#sorting articles on view_count and take the first 3 records
+
 	end
 
 	def new
